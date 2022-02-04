@@ -20,7 +20,7 @@ class examen{
         for (int i=0;i<x;i++){
             for (int j=0;j<y;j++){
                 System.out.println("Introduzca los valores de la primera matriz en la fila "+(i+1)+" colunna"+(j+1));
-                 M1[i][j] = sc.nextInt();
+                M1[i][j] = sc.nextInt();
             }
         }
         //llenar M2
@@ -54,7 +54,36 @@ class examen{
         }
         
     }
+    void ejercicio2(){
+        Scanner sc = new Scanner(System.in);
+        int X=0;
+        int Y=0;
+        
+        System.out.print("Asigne un valor para la dimencion en X de su matriz: ");
+        X = sc.nextInt();
+        
+        System.out.print("Asigne un valor para la dimencion en Y de su matriz: ");
+        Y = sc.nextInt();
+        
+        int[][] Matriz= new int[X][Y];
+        
+        for (int x=0;x<X;x++){
+            for (int y=0;y<Y;y++){
+                
+                Matriz[x][y]= ((240+x)*x*x*x*x)+((200+y)*y*y*y)-3;
+            
+            }
+        }
+        System.out.println("la matriz resultante es:");
+        for (int i=0;i<X;i++){
+            for (int j=0;j<Y;j++){
+                System.out.print(Matriz[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
 }
+
 
 public class Examen1 {
 
@@ -62,6 +91,7 @@ public class Examen1 {
         
         examen Ej= new examen();
         Ej.ejercicio1();
+        Ej.ejercicio2();
 
     }
     
