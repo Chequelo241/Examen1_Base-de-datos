@@ -54,6 +54,8 @@ class examen{
         }
         
     }
+    
+    //segundo ejecicio
     void ejercicio2(){
         Scanner sc = new Scanner(System.in);
         int X=0;
@@ -82,6 +84,51 @@ class examen{
             System.out.println();
         }
     }
+    
+    //tercer ejercicio
+    void ejercicio3(){
+        Scanner sc = new Scanner(System.in);
+        int X, Y;
+        int one=0, zero=0;
+        
+        //solicitar las dimenciones de la matriz
+        System.out.print("Asigne un valor para la dimencion en 'X' de su matriz: ");
+        X = sc.nextInt();
+        System.out.print("Asigne un valor para la dimencion en 'Y' de su matriz: ");
+        Y = sc.nextInt();
+        
+        int[][]MatrizI= new int[X][Y];
+        
+        //ciclo para solicitar los datos de la matriz
+        for(int i=0;i<X;i++){
+            for(int j=0;j<X;j++){
+                System.out.println("Introduzca los valores de la matriz en la fila "+(i+1)+" colunna"+(j+1));
+                MatrizI[i][j] = sc.nextInt();
+            }
+        }
+        //ciclo para comprobar si se trata de una matriz identidad
+        for (int i=0;i<X;i++){
+            for (int j=0;j<Y;j++){
+                if (i==j){
+                    if(MatrizI[i][j]!=1){
+                        one++;
+                    }
+                }
+                if (i!=j){
+                    if(MatrizI[i][j]!=0){
+                        zero++;
+                    }
+                }
+            }
+        }
+        if (one!=0&&zero!=0){
+            System.out.println("la matriz introducida NO es una matriz identidad");
+        }
+        else{
+            System.out.println("la matriz introducida es una matriz identidad");
+        }
+        
+    }
 }
 
 
@@ -90,8 +137,8 @@ public class Examen1 {
     public static void main(String[] args) {
         
         examen Ej= new examen();
-        Ej.ejercicio1();
-        Ej.ejercicio2();
+      
+        Ej.ejercicio3();
 
     }
     
