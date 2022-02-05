@@ -78,6 +78,7 @@ class examen{
             
             }
         }
+        //se imprime la matriz
         System.out.println("la matriz resultante es:");
         for (int i=0;i<X;i++){
             for (int j=0;j<Y;j++){
@@ -123,13 +124,14 @@ class examen{
                 }
             }
         } 
+        //se imprime la matriz
         for (int i=0;i<X;i++){
             for (int j=0;j<Y;j++){
                 System.out.print(MatrizI[i][j]+" ");
             }
             System.out.println();
         }
-        //Comprobar e imprimir resultado
+        // imprimir resultado
         if (one!=0&&zero!=0){
             System.out.println("la matriz introducida NO es una matriz identidad");
         }
@@ -159,25 +161,27 @@ class examen{
         }
         
         //comprobar si es una matriz triangular superior
-         int sum=0;
+         int Comprobar=0;
         for(int i=1;i<X;i++){
             for(int j=0;j<Y;j++){
                 if(j<i){
-                    sum+=MatrizT[i][j];      
+                    Comprobar+=MatrizT[i][j];      
                     }
              }
         }
+        //se imprime la matriz
         for (int i=0;i<X;i++){
             for (int j=0;j<Y;j++){
                 System.out.print(MatrizT[i][j]+" ");
             }
             System.out.println();
         }
-        if(sum==0){
-            System.out.print("Es una matriz triagular superior");
+        // se imprime el resultado
+        if(Comprobar==0){
+            System.out.println("Es una matriz triagular superior");
         }
         else{
-            System.out.print("No es una matriz triagular superior");
+            System.out.println("No es una matriz triagular superior");
         }
         
     }
@@ -187,9 +191,31 @@ class examen{
 public class Examen1 {
 
     public static void main(String[] args) {
-        
+        Scanner sc = new Scanner(System.in);
         examen Ej= new examen();
-        Ej.ejercicio3();
+        int Opc=0;
+        
+        System.out.println("--BIENVENIDO--");
+        while(Opc!=5){
+            System.out.println("escoja una de las siguientes opciones");
+            System.out.println("Opc-1");
+            System.out.println("Opc-2");
+            System.out.println("Opc-3");
+            System.out.println("Opc-4");
+            System.out.println("Opc-5:salir");
 
+            Opc=sc.nextInt();
+            if (Opc==1){
+                Ej.ejercicio1();
+            }
+            if (Opc==2){
+                Ej.ejercicio2();
+            }if (Opc==3){
+                Ej.ejercicio3();
+            }
+            if (Opc==4){
+                Ej.ejercicio4();
+            }
+        }
     }  
 }
