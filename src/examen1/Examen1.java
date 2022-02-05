@@ -45,6 +45,7 @@ class examen{
                 M_Result[i][j]=(M1[i][j]+M2[i][j])*M3[i][j];
             }
         }
+        //imprimir resultados 
         System.out.println("la matriz resultante es:");
         for (int i=0;i<x;i++){
             for (int j=0;j<y;j++){
@@ -60,7 +61,7 @@ class examen{
         Scanner sc = new Scanner(System.in);
         int X=0;
         int Y=0;
-        
+        //se solicitan las dimenciones de la matriz
         System.out.print("Asigne un valor para la dimencion en X de su matriz: ");
         X = sc.nextInt();
         
@@ -69,6 +70,7 @@ class examen{
         
         int[][] Matriz= new int[X][Y];
         
+        //se procede a llenar la matriz
         for (int x=0;x<X;x++){
             for (int y=0;y<Y;y++){
                 
@@ -102,7 +104,7 @@ class examen{
         //ciclo para solicitar los datos de la matriz
         for(int i=0;i<X;i++){
             for(int j=0;j<X;j++){
-                System.out.println("Introduzca los valores de la matriz en la fila "+(i+1)+" colunna"+(j+1));
+                System.out.print("Introduzca los valores de la matriz en la fila "+(i+1)+" colunna "+(j+1)+" : ");
                 MatrizI[i][j] = sc.nextInt();
             }
         }
@@ -120,12 +122,62 @@ class examen{
                     }
                 }
             }
+        } 
+        for (int i=0;i<X;i++){
+            for (int j=0;j<Y;j++){
+                System.out.print(MatrizI[i][j]+" ");
+            }
+            System.out.println();
         }
+        //Comprobar e imprimir resultado
         if (one!=0&&zero!=0){
             System.out.println("la matriz introducida NO es una matriz identidad");
         }
         else{
             System.out.println("la matriz introducida es una matriz identidad");
+        }   
+    }
+    
+    //Cuarto ejercicio
+    void ejercicio4(){
+        Scanner sc = new Scanner(System.in);
+        int X, Y;
+         //solicitar las dimenciones de la matriz
+        System.out.print("Asigne un valor para la dimencion en 'X' de su matriz: ");
+        X = sc.nextInt();
+        System.out.print("Asigne un valor para la dimencion en 'Y' de su matriz: ");
+        Y = sc.nextInt();
+        
+        int[][]MatrizT= new int[X][Y];
+        
+        //ciclo para solicitar los datos de la matriz
+        for(int i=0;i<X;i++){
+            for(int j=0;j<X;j++){
+                System.out.print("Introduzca los valores de la matriz en la fila "+(i+1)+" colunna "+(j+1)+" : ");
+                MatrizT[i][j] = sc.nextInt();
+            }
+        }
+        
+        //comprobar si es una matriz triangular superior
+         int sum=0;
+        for(int i=1;i<X;i++){
+            for(int j=0;j<Y;j++){
+                if(j<i){
+                    sum+=MatrizT[i][j];      
+                    }
+             }
+        }
+        for (int i=0;i<X;i++){
+            for (int j=0;j<Y;j++){
+                System.out.print(MatrizT[i][j]+" ");
+            }
+            System.out.println();
+        }
+        if(sum==0){
+            System.out.print("Es una matriz triagular superior");
+        }
+        else{
+            System.out.print("No es una matriz triagular superior");
         }
         
     }
@@ -137,9 +189,7 @@ public class Examen1 {
     public static void main(String[] args) {
         
         examen Ej= new examen();
-      
         Ej.ejercicio3();
 
-    }
-    
+    }  
 }
